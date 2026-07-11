@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="よちよち起業部について、よくあるご質問と回答（Q&A）をまとめています。入会への不安や活動内容について網羅的に解説しています。">
+    
+    <title>よくあるご質問（Q&A） | よちよち起業部</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 24px 80px 24px;
+        }
+        .faq-category-section {
+            margin-bottom: 50px;
+        }
+        .faq-category-title {
+            font-size: 1.4rem;
+            margin-top: 40px;
+            margin-bottom: 24px;
+            color: var(--color-primary-hover);
+            border-bottom: 2px solid var(--color-primary-light);
+            padding-bottom: 8px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-item {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px var(--color-shadow);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--color-bg-secondary);
+        }
+        .faq-item[open] {
+            box-shadow: 0 10px 30px var(--color-shadow);
+        }
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none; /* Hide default arrow */
+            position: relative;
+            user-select: none;
+            color: var(--color-text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .faq-question::-webkit-details-marker {
+            display: none; /* Hide default arrow in Safari */
+        }
+        .faq-question::after {
+            content: '＋';
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            font-weight: 700;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .faq-item[open] .faq-question::after {
+            content: '−';
+            color: var(--color-secondary);
+        }
+        .faq-answer {
+            padding: 24px;
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            border-top: 1px solid var(--color-bg-secondary);
+            background-color: #FAF9F6;
+        }
+        .faq-answer p {
+            margin-bottom: 16px;
+        }
+        .faq-answer p:last-child {
+            margin-bottom: 0;
+        }
+        .faq-answer strong {
+            color: var(--color-text-primary);
+        }
+        .faq-title-section {
+            padding: 80px 0 40px 0;
+            background-color: var(--color-bg-secondary);
+            position: relative;
+        }
+        .faq-intro-box {
+            background-color: var(--color-white);
+            padding: 24px;
+            border-radius: var(--border-radius-sm);
+            box-shadow: 0 4px 15px var(--color-shadow);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 1rem;
+            color: var(--color-text-primary);
+            border-left: 4px solid var(--color-primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Blurry Ambient Background Gradients -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="logo-link">
+                <span class="logo-icon">🐣</span>
+                <span class="logo-text">よちよち起業部</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html#philosophy" id="nav-philosophy">私たちの理念</a></li>
+                    <li><a href="index.html#stepup" id="nav-stepup">ステップアップ</a></li>
+                    <li><a href="column.html" id="nav-column">コラム</a></li>
+                    <li><a href="faq.html" id="nav-faq" class="active">よくある質問</a></li>
+                    <li><a href="terms.html" id="nav-terms">利用規約</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="index.html#contact" class="btn btn-primary btn-sm" id="header-cta-btn">ワンポイントレッスン＆お茶会に参加する</a>
+            </div>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="メニューを開閉する">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Header Banner Section -->
+        <section class="faq-title-section text-center">
+            <div class="container">
+                <span class="section-subtitle">🐣 YOCHIYOCHI FAQ</span>
+                <h1 class="column-page-title" style="margin-top: 10px; font-weight: 700; font-size: 2.3rem;">よくあるご質問（Q&A）</h1>
+            </div>
+        </section>
+
+        <!-- FAQ Content Section -->
+        <section class="faq-container">
+            <div class="faq-intro-box">
+                よちよち起業部への入会を検討されている方や、活動内容・雰囲気について知りたい方からよく寄せられる質問をまとめました。不安の解消や第一歩を踏み出す参考になれば幸いです。質問部分をクリックすると回答が表示されます。
+            </div>
+
+            <!-- Category 1 -->
+            <div class="faq-category-section">
+                <h2 class="faq-category-title"><span>👤</span> 参加資格・条件について</h2>
+                
+                <details class="faq-item">
+                    <summary class="faq-question">年齢制限はありますか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>年齢制限は一切ございません。</strong> 学生の方から、会社員、主婦、シニア世代の方まで、幅広い年齢層の方が「一生モノの仲間」として対等に学び合っています。世代を超えた交流ができるのも魅力の1つです。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">どのような業種・ジャンルの人が参加できますか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>業種やビジネスモデルの制限はありません。</strong> 飲食、サロン、カウンセラー、コーチング、Webデザイン、ライター、ハンドメイド作家など多種多様です。また、まだ具体的なアイデアが決まっていない方（たまご期）も歓迎いたします。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">すでに起業していて売上があるのですが、入会できますか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>はい、歓迎いたします。</strong> ただし、当部は「助け合いと初心者サポート」を理念としております。他メンバーへの強引な売り込み、営業目的のみでの参加、高額なビジネス・マルチ商法への勧誘などを目的とした入会はお断りしております。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">毎月開催のイベントには必ず出席しなければいけませんか？</summary>
+                    <div class="faq-answer">
+                        <p>原則として、毎月開催される講座やお茶会には<strong>「なるべくご参加いただくこと」</strong>をお願いしております。顔を合わせるリアルな交流を大切にし、お互いの信頼関係を深く築くことを重視しているためです。ただし、どうしてもご都合が悪い場合は無理をせずお休みいただけます。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">足立区以外に住んでいても入会できますか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>はい、どなたでも入会可能です。</strong> ただし、リアルな開催場所は足立区内（カフェや学習センターなど）が中心となりますので、定期的に足立区までお越しいただける方におすすめしております。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">サークルやコミュニティの雰囲気に馴染めるか不安です。</summary>
+                    <div class="faq-answer">
+                        <p>よちよち起業部は、一般的な起業塾のような月商アピールや競い合いを排し、<strong>「弱さを見せ合える優しい関係性」</strong>を何より大切にしています。事務局や先輩メンバーがアットホームにサポートしますので、内向的な方や人見知りの方でも安心して馴染んでいただけます。</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="faq-category-section">
+                <h2 class="faq-category-title"><span>📅</span> 活動内容・お茶会について</h2>
+
+                <details class="faq-item">
+                    <summary class="faq-question">ワンポイントレッスン＆お茶会では具体的に何をしますか？</summary>
+                    <div class="faq-answer">
+                        <p>前半は起業や副業の初期に役立つ「ちょっとしたノウハウ（名刺作り、SNS発信、開業届の手順など）」を学ぶ<strong>ワンポイントレッスン</strong>を行います。後半はお茶を片手に、メンバー同士で日頃の悩みや進捗をゆるっとお話しする<strong>交流会（お茶会）</strong>となります。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">お茶会の開催場所はどこですか？</summary>
+                    <div class="faq-answer">
+                        <p>基本的には<strong>足立区内のカフェや公共の学習センター</strong>、または部員の日程調整の都合に合わせてオンライン（ZOOM）等で開催します。具体的な開催場所は毎回事前にアナウンスされます。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">毎回のイベントにかかる費用はお茶代だけですか？</summary>
+                    <div class="faq-answer">
+                        <p>会員の方は、毎月のレッスンやお茶会への参加自体は<strong>原則無料（追加の参加費なし）</strong>です。ただし、各自が注文するお茶代や食事代については自己負担となります。また、会場をレンタルする際に別途数百円程度の会場実費を割り勘でご負担いただく場合があります。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">グループLINEではどのようなやり取りをしますか？</summary>
+                    <div class="faq-answer">
+                        <p>事務局からの事務連絡やイベント案内、日程調整のほか、メンバー間の<strong>「チラシができたので見てほしい！」「今週の小さな活動報告」</strong>といった、温かい雑談や気軽な相談、お互いのサービスの応援やテストモニター募集などに利用しています。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">グループLINEの連絡にはすぐに返信しなければいけませんか？</summary>
+                    <div class="faq-answer">
+                        <p>いいえ、<strong>返信はご自身の無理のない範囲で（任意で）行ってください。</strong> 既読スルーや返信がないことに対して非難することは利用規約で固く禁止されています。ご自身のペースを何より尊重します。</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="faq-category-section">
+                <h2 class="faq-category-title"><span>🌱</span> 起業の悩み・スキルについて</h2>
+
+                <details class="faq-item">
+                    <summary class="faq-question">起業のアイデアが全く決まっていなくても大丈夫ですか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>大歓迎です！</strong> 当部ではこれを「たまご期」と呼んでいます。最初から完璧なビジネスプランを用意する必要はありません。他のメンバーの活動を見たり、お茶会での対話を通じて、「自分が本当にやりたいこと」をじっくり探して温めていきましょう。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">パソコンの操作やITツールがとても苦手ですが大丈夫ですか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>全く心配ありません。</strong> 名刺・チラシの作り方や、便利なITツール（生成AIなどの簡単な活用など）を、お茶会やレッスンで初心者向けに噛み砕いてお教えしています。得意な部員が優しくサポートしますので、一緒に学んでいきましょう。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">入会後に高額な教材やツールの購入を勧められることはありませんか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>一切ありません。</strong> 当部ではそのようなビジネス目的の利用を固く禁じております。他者へのしつこい売り込みやマルチ商法への勧誘などが発覚した場合は、利用規約に基づき即時退会処分といたします。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">会社や周囲の人に内緒で副業・起業準備をしたいのですが。</summary>
+                    <div class="faq-answer">
+                        <p>活動の様子をSNS等に掲載する際、集合写真を使用することがありますが、<strong>事前にお申し出いただければ顔隠しの加工等の配慮を行います。</strong> プライバシーを尊重いたしますので、安心してご相談ください。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">他の起業塾やコンサルタントとの違いは何ですか？</summary>
+                    <div class="faq-answer">
+                        <p>一般的な起業塾のような成果や売上の強制、プレッシャーとなる目標設定はありません。よちよち起業部は<strong>「一人の孤独をなくすこと」「お互いのサービスを安心してテストし合える優しい仲間と出会うこと」</strong>を最優先としたコミュニティです。</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Category 4 -->
+            <div class="faq-category-section">
+                <h2 class="faq-category-title"><span>🪙</span> 会費・手続きについて</h2>
+
+                <details class="faq-item">
+                    <summary class="faq-question">会費の年間24,000円はどのように支払いますか？</summary>
+                    <div class="faq-answer">
+                        <p>入会時に<strong>1年分の会費を一括</strong>でお支払いいただきます。お支払い方法は、銀行振込またはクレジットカード等がご利用いただけます。月々換算すると2,000円という低リスクな料金設計となっております。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">なぜ月額制ではなく「年間一括」での支払いなのですか？</summary>
+                    <div class="faq-answer">
+                        <p>焦らずにじっくり自分のビジネスを育てる時間（1年間）を自分自身に持っていただくこと、また、お互いを思いやれる「一生モノの仲間」と長期的な信頼関係を築くためです。また、サークルの安全で温かい秩序を守るための仕組みでもあります。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">途中で退会することはできますか？その際返金はありますか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>退会自体はいつでも可能</strong>です。ただし、一度お支払いいただいた年間会費につきましては、理由の如何を問わず返金いたしかねますのでご了承ください。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">会員期限の更新は自動で行われますか？</summary>
+                    <div class="faq-answer">
+                        <p><strong>会員資格は1年ごとの自動更新となります。</strong> 期間満了の1ヶ月前までに退会のお申し出がない場合、自動的に1年間更新されます。更新を希望されない場合は、必ず期間満了の1ヶ月前までに事務局までご連絡ください。</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="contact-section" id="contact" style="padding-top: 40px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="contact-card-wrapper">
+                    <div class="contact-info">
+                        <span class="subtitle">Join Us</span>
+                        <h2 class="contact-title">まずは「ワンポイントレッスン ＆ お茶会」に<br>遊びにいきませんか？</h2>
+                        <p class="contact-desc">
+                            よちよち起業部は、あなたのスピードと気持ちを何より大切にします。無理な勧誘は一切ありません。まずはワンポイントレッスンで学びながら、お茶会でゆるっとお話ししましょう。
+                        </p>
+                        <div class="contact-meta">
+                            <div class="meta-item">
+                                <span class="meta-icon">📅</span>
+                                <div>
+                                    <strong>開催日時</strong>
+                                    <p>毎月 第2・第4木曜 19:00〜</p>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">📍</span>
+                                <div>
+                                    <strong>開催場所</strong>
+                                    <p>足立区内のカフェ・学習センターなど</p>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-icon">💴</span>
+                                <div>
+                                    <strong>参加費</strong>
+                                    <p>ご自身のお茶代のみ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3 class="form-title">ワンポイントレッスン＆お茶会に申し込む</h3>
+                        <p style="margin-bottom: 24px; color: var(--text-muted); line-height: 1.6;">
+                            お申し込みは外部サービス（Googleフォーム）にて受け付けております。下記のボタンよりお気軽にお申し込みください。
+                        </p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3js88L76QkptIK8jZfHH8GuGqnYndA6zL57HHYK1vQt4Bvg/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block text-center" style="display: block; text-decoration: none; padding: 16px 20px; font-weight: bold; border-radius: 8px;">
+                            <span>👉 お申し込みはこちら</span>
+                        </a>
+                        <p style="margin-top: 12px; font-size: 0.85rem; color: var(--color-text-secondary); text-align: center; line-height: 1.5;">
+                            ※お申し込みの前に、必ず<a href="terms.html" style="text-decoration: underline; color: var(--color-primary); font-weight: bold;">利用規約および重要事項</a>をご一読ください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🐣</span>
+                    <span class="logo-text">よちよち起業部</span>
+                </a>
+                <p class="footer-slogan">挑戦を孤独にしない、一生モノの仲間と出会う場所。</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html#philosophy">私たちの理念</a></li>
+                    <li><a href="index.html#stepup">ステップアップ</a></li>
+                    <li><a href="column.html">コラム</a></li>
+                    <li><a href="faq.html">よくある質問</a></li>
+                    <li><a href="terms.html">利用規約</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p class="copyright">&copy; 2026 よちよち起業部. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>
