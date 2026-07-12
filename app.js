@@ -230,14 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Deep linking check based on URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const articleId = urlParams.get('id');
-        if (articleId && ['1', '2', '3', '4', '5'].includes(articleId)) {
-            // Instantly show the article on page load (skip animation delay)
-            columnListView.style.display = 'none';
-            columnDetailView.style.display = 'block';
-            columnDetailView.style.opacity = '1';
-            
+        if (articleId && /^\d+$/.test(articleId)) {
             const activeArticle = document.getElementById(`article-${articleId}`);
             if (activeArticle) {
+                // Instantly show the article on page load (skip animation delay)
+                columnListView.style.display = 'none';
+                columnDetailView.style.display = 'block';
+                columnDetailView.style.opacity = '1';
                 activeArticle.style.display = 'block';
             }
         }
