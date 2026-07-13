@@ -241,4 +241,77 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // ----------------------------------------------------------------------
+    // 7. Dynamic Home Page Columns Loader
+    // ----------------------------------------------------------------------
+    const latestColumnsGrid = document.querySelector('.latest-columns-grid');
+    if (latestColumnsGrid) {
+        fetch('column.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const cards = doc.querySelectorAll('.column-grid .column-card');
+                
+                // Get the latest 3 cards
+                const latestCards = Array.from(cards).slice(0, 3);
+                
+                if (latestCards.length > 0) {
+                    latestColumnsGrid.innerHTML = ''; // Clear fallback content
+                    
+                    latestCards.forEach((card, index) => {
+                        const id = card.getAttribute('data-id');
+                        const imgEl = card.querySelector('.column-card-img');
+                        const imgRelative = imgEl ? imgEl.getAttribute('src') : '';
+                        const imgAlt = imgEl ? imgEl.getAttribute('alt') : '';
+                        
+                        const tagEl = card.querySelector('.column-card-tag');
+                        const tag = tagEl ? tagEl.textContent.trim() : '';
+                        const tagClass = tagEl ? Array.from(tagEl.classList).find(c => c.startsWith('tag-')) || '' : '';
+                        
+                        const dateEl = card.querySelector('.column-card-date');
+                        const date = dateEl ? dateEl.textContent.trim() : '';
+                        
+                        const titleEl = card.querySelector('.column-card-title');
+                        const title = titleEl ? titleEl.textContent.trim() : '';
+                        
+                        const excerptEl = card.querySelector('.column-card-excerpt');
+                        const excerpt = excerptEl ? excerptEl.textContent.trim() : '';
+                        
+                        const delayClass = index === 0 ? '' : ` delay-${index}`;
+                        
+                        const cardHtml = `
+                            <article class="latest-column-card fade-in-on-scroll${delayClass}" onclick="location.href='column.html?id=${id}'">
+                                <div class="latest-column-card-img-wrapper">
+                                    <img src="${imgRelative}" alt="${imgAlt}" class="latest-column-img">
+                                    <span class="latest-column-tag ${tagClass}">${tag}</span>
+                                </div>
+                                <div class="latest-column-content">
+                                    <span class="latest-column-date">${date}</span>
+                                    <h3 class="latest-column-title">${title}</h3>
+                                    <p class="latest-column-excerpt">${excerpt}</p>
+                                    <span class="latest-column-link">記事を読む ➡️</span>
+                                </div>
+                            </article>
+                        `;
+                        latestColumnsGrid.insertAdjacentHTML('beforeend', cardHtml);
+                    });
+                    
+                    // Observe the newly created elements for scroll reveal animation
+                    latestColumnsGrid.querySelectorAll('.fade-in-on-scroll').forEach(element => {
+                        observer.observe(element);
+                    });
+                }
+            })
+            .catch(err => {
+                console.error('Failed to load latest columns dynamically:', err);
+                // Fallback content is already in the HTML, so we do nothing to preserve it.
+            });
+    }
 });

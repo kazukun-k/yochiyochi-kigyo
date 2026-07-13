@@ -1510,3 +1510,81 @@ section {
     background-color: var(--color-primary);
     color: var(--color-white);
 }
+
+/* ==========================================================================
+   15. Letter Box (手紙風メッセージ)
+   ========================================================================== */
+.philosophy-text.letter-style {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 15px 35px var(--color-shadow);
+    border: 1px solid rgba(126, 154, 133, 0.15); /* Calm Sage Green border tint */
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Serif JP', 'Shippori Mincho', Georgia, serif; /* 明朝体で手紙のような風合いに */
+}
+
+.philosophy-text.letter-style::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+}
+
+.philosophy-text.letter-style .letter-to {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-primary-hover);
+    margin-bottom: 24px;
+    border-bottom: 1px dashed rgba(126, 154, 133, 0.3);
+    padding-bottom: 12px;
+}
+
+.philosophy-text.letter-style p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+    margin-bottom: 16px;
+}
+
+.philosophy-text.letter-style p:last-child {
+    margin-bottom: 0;
+}
+
+.philosophy-text.letter-style .lead-paragraph {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.8;
+}
+
+.philosophy-text.letter-style blockquote.mental-struggles {
+    background-color: var(--color-primary-light);
+    border-left: 3px solid var(--color-primary);
+    padding: 12px 16px;
+    margin: 16px 0;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    font-style: normal;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.philosophy-text.letter-style .letter-footer {
+    margin-top: 30px;
+    text-align: right;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustment for letter style */
+@media (max-width: 768px) {
+    .philosophy-text.letter-style {
+        padding: 30px 20px;
+    }
+}
