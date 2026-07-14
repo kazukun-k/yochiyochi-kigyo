@@ -1523,6 +1523,8 @@ section {
     position: relative;
     overflow: hidden;
     font-family: 'Noto Serif JP', 'Shippori Mincho', Georgia, serif; /* 明朝体で手紙のような風合いに */
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .philosophy-text.letter-style::before {
